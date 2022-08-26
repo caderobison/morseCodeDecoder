@@ -1,0 +1,101 @@
+//module sevenSegDecoder(d0,d1,d2,d3,d4,d5,a,b,c,d,e,f,g);
+//input d0,d1,d2,d3,d4,d5;
+//output a,b,c,d,e,f,g;
+//
+//assign nd0 = ~d0;
+//assign nd1 = ~d1;
+//assign nd2 = ~d2;
+//assign nd3 = ~d3;
+//assign nd4 = ~d4;
+//assign nd5 = ~d5;
+//
+//assign a = d1 & nd2 & d4 & nd5 | d1 & d2 & d3 & d5 | nd2 & nd3 & d4 & nd5 | nd1 & d2 & d3 & d4 | nd0 & nd1 & d4 & d5 | nd0 & nd2 & nd3 & nd5 | d1 & d2 & d3 & nd4 | nd1 & d2 & nd3 & nd4 | d1 & nd3 & d4 & nd5 | nd0 & nd2 & nd3 & nd4 | d1 & d2 & nd4 & d5 | nd0 & nd2 & d3 & nd4 & d5; 
+//assign b = d0 & d2 | nd0 & nd2 & nd3 | nd0 & nd2 & d4 | nd0 & d4 & nd5 | nd1 & d2 & d3 | d2 & d3 & nd4 | d1 & nd3 & nd5 | nd0 & nd1 & nd4 & d5 | nd2 & nd3 & d4 & d5;
+//assign c = d0 & d2 | nd0 & nd1 & nd2 & nd3 | nd0 & nd2 & nd3 & d5 | nd0 & ;
+
+module sevenSegDecoder(d,en,seg);
+
+input [5:0] d;
+input en;
+reg [6:0] H;
+output [6:0] seg;
+////seg[6] = a
+//assign seg[6] = d1 & ~d2 & d4 & ~d5 | d1 & d2 & d3 & d5 | ~d2 & ~d3 & d4 & ~d5 | ~d1 & d2 & d3 & d4 | ~d0 & ~d1 & d4 & d5 | ~d0 & ~d2 & ~d3 & ~d5 | d1 & d2 & d3 & ~d4 | ~d1 & d2 & ~d3 & ~d4 | d1 & ~d3 & d4 & ~d5 | ~d0 & ~d2 & ~d3 & d4 | d1 & d2 & ~d4 & d5 | ~d0 & ~d2 & d3 & ~d4 & d5; 
+//
+////seg[5] = b
+//assign seg[5] = d0 & d2 | ~d0 & ~d2 & ~d3 | ~d0 & ~d2 & d4 | ~d0 & d4 & ~d5 | ~d1 & d2 & d3 | d2 & d3 & ~d4 | d1 & ~d3 & ~d5 | ~d0 & ~d1 & ~d4 & d5 | ~d2 & ~d3 & d4 & d5; 
+//
+////seg[4] = c 
+//assign seg[4] = d0 & d2 | ~d0 & ~d1 & ~d2 & ~d3 | ~d0 & ~d2 & ~d3 & d5 | ~d0 & ~d2 & ~d3 & d4 | ~d1 & ~d3 & ~d4 & d5 | d1 & ~d2 & d4 & d5 | d1 & d3 & ~d4 & ~d5 | d1 & d2 & ~d3 & ~d5 | d1 & d2 & d3 & ~d4;
+//
+////d              1        2           3          4             5             6                7                      8                   9                   10                    11                  12                    13                          
+//assign seg[3] = d0&d2 | d3&~d4&~d5 | d1&d2&d3 | d2&d3&d4&d5 | d1&d2&d4&d5 | d0&~d3&d4&~d5 | ~d0&~d1&~d2&~d4&~d5 |  ~d0&~d1&~d2&d3&~d4 | ~d0&~d1&~d2&d3&~d5 | ~d1&d2&~d3&~d4&d5 | d1&~d2&~d3&~d4&d5 | d1&~d2&~d3&d4&~d5 | ~d0&~d1&~d2&~d3&d4&d5;
+//
+////e
+//assign seg[2] = d0&~d5 | d1&d3&d5 | d1&d2&d5 | d1&d2&d3 | d1&~d3&d4&~d5 | ~d1&~d2&~d3&~d4&~d5 | ~d0&~d2&d3&d4&d5;
+//
+////f
+//assign seg[1] = d0&~d3&~d4 | d0&~d3&~d5 | ~d2&~d3&~d4&~d5 | ~d1&d2&~d3&d5 | d2&~d3&d4&~d5 | d1&~d2&~d3&~d5 | d1&~d2&d3&d5 | d1&d2&d3&~d4 | ~d0&~d2&d3&~d4&d5 | ~d0&~d1&d3&d4&~d5;
+//
+////g
+//assign seg[0] = ~d0&~d3&~d4&~d5 | d0&~d3&d4&~d5 | d0&d3&~d4&~d5 | d0&d3&d4&d5 | ~d0&~d2&~d3&d4&d5 | ~d0&~d1&d2&~d3&~d5 | ~d1&d2&d3&~d4&d5 | d1&~d2&d3&~d4&d5;
+
+always @ (d[0] or d[1] or d[2] or d[3] or d[4] or d[5])
+	begin 
+		case ({d[5],d[4],d[3],d[2],d[1],d[0]})
+			6'b000000: H= 7'b1111111;
+			6'b000001: H= 7'b0110000;
+			6'b000010: H= 7'b1110000;
+			6'b000011: H= 7'b1111001;
+			6'b000100: H= 7'b0001000;
+			6'b000101: H= 7'b1101010;
+			6'b000110: H= 7'b0101010;
+			6'b000111: H= 7'b1100100;
+			6'b001000: H= 7'b1000001;
+			6'b001001: H= 7'b1111010;
+			6'b001010: H= 7'b0100011;
+			6'b001011: H= 7'b1000010;
+			6'b001100: H= 7'b0101000;
+			6'b001101: H= 7'b0100001;
+			6'b001110: H= 7'b1100010;
+			6'b001111: H= 7'b1101000;
+			6'b010000: H= 7'b1100011;
+			6'b010001: H= 7'b0111000;
+			6'b010010: H= 7'b1111110;
+			6'b010011: H= 7'b1110001;
+			6'b010100: H= 7'b0011000;
+			6'b010101: H= 7'b1000111;
+			6'b010110: H= 7'b1100000;
+			6'b010111: H= 7'b0110110;
+			6'b011000: H= 7'b0110001;
+			6'b011001: H= 7'b1000100;
+			6'b011010: H= 7'b1110110;
+			6'b011011: H= 7'b0001100;
+			6'b011100: H= 7'b1111110;
+			6'b011101: H= 7'b1111110;
+			6'b011110: H= 7'b0100100; //5
+			6'b011111: H= 7'b1001100;
+			6'b100000: H= 7'b0000110;
+			6'b100001: H= 7'b0010010;
+			6'b100010: H= 7'b1001111;
+			6'b100011: H= 7'b0100000;
+			6'b100100: H= 7'b0001101;
+			6'b100101: H= 7'b0000000;
+			6'b100110: H= 7'b0000100;
+			6'b100111: H= 7'b0000001;
+			6'b101000: H= 7'b1111110;
+			
+		endcase
+	end
+
+assign seg[0] = H[0]|~en;
+assign seg[1] = H[1]|~en;
+assign seg[2] = H[2]|~en;
+assign seg[3] = H[3]|~en;
+assign seg[4] = H[4]|~en;
+assign seg[5] = H[5]|~en;
+assign seg[6] = H[6]|~en;
+
+			
+endmodule
+

@@ -1,0 +1,86 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 344 224)
+	(text "RegShiftAnd7Seg" (rect 5 0 110 19)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "Full" (rect 0 0 21 19)(font "Intel Clear" (font_size 8)))
+		(text "Full" (rect 21 75 42 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "Load[5..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
+		(text "Load[5..0]" (rect 21 27 81 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Scroll[5..0]" (rect 0 0 63 19)(font "Intel Clear" (font_size 8)))
+		(text "Scroll[5..0]" (rect 21 43 84 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Selector" (rect 0 0 48 19)(font "Intel Clear" (font_size 8)))
+		(text "Selector" (rect 21 91 69 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Clock" (rect 0 0 31 19)(font "Intel Clear" (font_size 8)))
+		(text "Clock" (rect 21 107 52 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Reset" (rect 0 0 33 19)(font "Intel Clear" (font_size 8)))
+		(text "Reset" (rect 21 123 54 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "seg[6..0]" (rect 112 0 162 19)(font "Intel Clear" (font_size 8)))
+		(text "seg[6..0]" (rect 209 43 259 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "out[5..0]" (rect 112 0 161 19)(font "Intel Clear" (font_size 8)))
+		(text "out[5..0]" (rect 210 27 259 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 32)(pt 264 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 144))
+	)
+)

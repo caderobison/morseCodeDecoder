@@ -1,0 +1,29 @@
+# 0 compiles, 2 failed with no errors.
+# Compile of ModifiedUpCounter.v was successful.
+# Load canceled
+# Compile of ModifiedUpCounter.v was successful.
+# Compile of ModifiedUpCounterCircuit.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ModifiedUpCounter
+# vsim -gui work.ModifiedUpCounter 
+# Start time: 22:16:02 on Dec 01,2021
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.ModifiedUpCounter(fast)
+add wave -position insertpoint  \
+sim:/ModifiedUpCounter/Clock \
+sim:/ModifiedUpCounter/Clear_n \
+sim:/ModifiedUpCounter/w \
+sim:/ModifiedUpCounter/z \
+sim:/ModifiedUpCounter/q2 \
+sim:/ModifiedUpCounter/q1 \
+sim:/ModifiedUpCounter/q0
+force -freeze sim:/ModifiedUpCounter/Clock 0 0, 1 {50 ns} -r 100
+force -freeze sim:/ModifiedUpCounter/Clear_n 1'h0 0
+force -freeze sim:/ModifiedUpCounter/w 1'h1 0
+run100
+# invalid command name "run100"
+run 100
+force -freeze sim:/ModifiedUpCounter/Clear_n 1'h1 0
+run 900
+# End time: 02:32:19 on Dec 02,2021, Elapsed time: 4:16:17
+# Errors: 0, Warnings: 8

@@ -1,0 +1,828 @@
+Analysis & Synthesis report for MorseCodeDecoder
+Thu Aug 25 20:54:23 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex7|BUSMUX:inst9
+ 13. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex6|BUSMUX:inst9
+ 14. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex5|BUSMUX:inst9
+ 15. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex4|BUSMUX:inst9
+ 16. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex3|BUSMUX:inst9
+ 17. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex2|BUSMUX:inst9
+ 18. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex1|BUSMUX:inst9
+ 19. Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex0|BUSMUX:inst9
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Aug 25 20:54:22 2022           ;
+; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name                      ; MorseCodeDecoder                                ;
+; Top-level Entity Name              ; MorseCodeDecoder                                ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 530                                             ;
+;     Total combinational functions  ; 521                                             ;
+;     Dedicated logic registers      ; 103                                             ;
+; Total registers                    ; 103                                             ;
+; Total pins                         ; 82                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; MorseCodeDecoder   ; MorseCodeDecoder   ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
+; MorseCodeDecoder.bdf             ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/MorseCodeDecoder.bdf          ;         ;
+; sevenSegDecoder.v                ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/sevenSegDecoder.v             ;         ;
+; dashNextState.v                  ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/dashNextState.v               ;         ;
+; dotNextState.v                   ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/dotNextState.v                ;         ;
+; nextStateCircuit.bdf             ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/nextStateCircuit.bdf          ;         ;
+; CharFiniteStateMachine.bdf       ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/CharFiniteStateMachine.bdf    ;         ;
+; 6BitRegister.bdf                 ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/6BitRegister.bdf              ;         ;
+; ModifiedUpCounterCircuit.v       ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/ModifiedUpCounterCircuit.v    ;         ;
+; ModifiedUpCounter.bdf            ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/ModifiedUpCounter.bdf         ;         ;
+; Decoder3to8.v                    ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/Decoder3to8.v                 ;         ;
+; RegShiftAnd7Seg.bdf              ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/RegShiftAnd7Seg.bdf           ;         ;
+; myMux41.v                        ; yes             ; User Verilog HDL File                    ; U:/Documents/CPRE281/final_project/myMux41.v                     ;         ;
+; debouncer.bdf                    ; yes             ; User Block Diagram/Schematic File        ; U:/Documents/CPRE281/final_project/debouncer.bdf                 ;         ;
+; clock_divider_1024.bdf           ; yes             ; Auto-Found Block Diagram/Schematic File  ; U:/Documents/CPRE281/final_project/clock_divider_1024.bdf        ;         ;
+; 21mux.bdf                        ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/others/maxplus2/21mux.bdf    ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.inc    ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.tdf    ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/aglobal211.inc ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/muxlut.inc     ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/bypassff.inc   ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga/21.1/quartus/libraries/megafunctions/altshift.inc   ;         ;
+; db/mux_crc.tdf                   ; yes             ; Auto-Generated Megafunction              ; U:/Documents/CPRE281/final_project/db/mux_crc.tdf                ;         ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 530           ;
+;                                             ;               ;
+; Total combinational functions               ; 521           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 343           ;
+;     -- 3 input functions                    ; 155           ;
+;     -- <=2 input functions                  ; 23            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 521           ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 103           ;
+;     -- Dedicated logic registers            ; 103           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 82            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; Reset_n~input ;
+; Maximum fan-out                             ; 53            ;
+; Total fan-out                               ; 2347          ;
+; Average fan-out                             ; 2.98          ;
++---------------------------------------------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name              ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------------------+--------------+
+; |MorseCodeDecoder                      ; 521 (3)             ; 103 (0)                   ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |MorseCodeDecoder                                                                        ; MorseCodeDecoder         ; work         ;
+;    |CharFiniteStateMachine:inst6|      ; 67 (0)              ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6                                           ; CharFiniteStateMachine   ; work         ;
+;       |nextStateCircuit:inst|          ; 67 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst                     ; nextStateCircuit         ; work         ;
+;          |dashNextState:inst2|         ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2 ; dashNextState            ; work         ;
+;          |dotNextState:inst3|          ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3  ; dotNextState             ; work         ;
+;          |myMux41:state0|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state0      ; myMux41                  ; work         ;
+;          |myMux41:state2|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state2      ; myMux41                  ; work         ;
+;          |myMux41:state3|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state3      ; myMux41                  ; work         ;
+;          |myMux41:state4|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state4      ; myMux41                  ; work         ;
+;          |myMux41:state5|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state5      ; myMux41                  ; work         ;
+;          |myMux41:state|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state       ; myMux41                  ; work         ;
+;    |Decoder3to8:inst4|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|Decoder3to8:inst4                                                      ; Decoder3to8              ; work         ;
+;    |ModifiedUpCounter:inst5|           ; 4 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|ModifiedUpCounter:inst5                                                ; ModifiedUpCounter        ; work         ;
+;       |ModifiedUpCounterCircuit:inst3| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|ModifiedUpCounter:inst5|ModifiedUpCounterCircuit:inst3                 ; ModifiedUpCounterCircuit ; work         ;
+;    |RegShiftAnd7Seg:hex0|              ; 43 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex0                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex0|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex0|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex1|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex2|              ; 48 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 41 (41)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex3|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex4|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex5|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex6|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |RegShiftAnd7Seg:hex7|              ; 49 (1)              ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7                                                   ; RegShiftAnd7Seg          ; work         ;
+;       |6BitRegister:reg|               ; 6 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg                                  ; 6BitRegister             ; work         ;
+;          |21mux:inst10|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst10                     ; 21mux                    ; work         ;
+;          |21mux:inst11|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst11                     ; 21mux                    ; work         ;
+;          |21mux:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst6                      ; 21mux                    ; work         ;
+;          |21mux:inst7|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst7                      ; 21mux                    ; work         ;
+;          |21mux:inst8|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst8                      ; 21mux                    ; work         ;
+;          |21mux:inst9|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst9                      ; 21mux                    ; work         ;
+;       |sevenSegDecoder:hex|            ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|sevenSegDecoder:hex                               ; sevenSegDecoder          ; work         ;
+;    |debouncer:inst10|                  ; 21 (0)              ; 19 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst10                                                       ; debouncer                ; work         ;
+;       |clock_divider_1024:inst1|       ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst10|clock_divider_1024:inst1                              ; clock_divider_1024       ; work         ;
+;       |clock_divider_1024:inst|        ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst10|clock_divider_1024:inst                               ; clock_divider_1024       ; work         ;
+;    |debouncer:inst1|                   ; 18 (0)              ; 12 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst1                                                        ; debouncer                ; work         ;
+;       |clock_divider_1024:inst1|       ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst1|clock_divider_1024:inst1                               ; clock_divider_1024       ; work         ;
+;       |clock_divider_1024:inst|        ; 5 (5)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst1|clock_divider_1024:inst                                ; clock_divider_1024       ; work         ;
+;    |debouncer:inst9|                   ; 16 (0)              ; 14 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst9                                                        ; debouncer                ; work         ;
+;       |clock_divider_1024:inst1|       ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst9|clock_divider_1024:inst1                               ; clock_divider_1024       ; work         ;
+;       |clock_divider_1024:inst|        ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MorseCodeDecoder|debouncer:inst9|clock_divider_1024:inst                                ; clock_divider_1024       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                  ; Latch Enable Signal                                                         ; Free of Timing Hazards ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+------------------------+
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[6]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[5]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[4]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[3]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[2]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[1]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[0]                               ; RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|Mux1                               ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[4] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[4]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[3] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[3]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[2] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[2]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[1] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[1]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[5] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[5]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[0] ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[0]  ; CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|Mux6 ; yes                    ;
+; Number of user-specified and inferred latches = 68                          ;                                                                             ;                        ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++------------------------------------------------+------------------------------------------------------------+
+; Register name                                  ; Reason for Removal                                         ;
++------------------------------------------------+------------------------------------------------------------+
+; debouncer:inst1|clock_divider_1024:inst|inst1  ; Merged with debouncer:inst9|clock_divider_1024:inst|inst1  ;
+; debouncer:inst10|clock_divider_1024:inst|inst1 ; Merged with debouncer:inst9|clock_divider_1024:inst|inst1  ;
+; debouncer:inst1|clock_divider_1024:inst|inst2  ; Merged with debouncer:inst9|clock_divider_1024:inst|inst2  ;
+; debouncer:inst10|clock_divider_1024:inst|inst2 ; Merged with debouncer:inst9|clock_divider_1024:inst|inst2  ;
+; debouncer:inst1|clock_divider_1024:inst|inst3  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst3 ;
+; debouncer:inst9|clock_divider_1024:inst|inst3  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst3 ;
+; debouncer:inst1|clock_divider_1024:inst|inst4  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst4 ;
+; debouncer:inst9|clock_divider_1024:inst|inst4  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst4 ;
+; debouncer:inst1|clock_divider_1024:inst|inst5  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst5 ;
+; debouncer:inst9|clock_divider_1024:inst|inst5  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst5 ;
+; debouncer:inst1|clock_divider_1024:inst|inst6  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst6 ;
+; debouncer:inst9|clock_divider_1024:inst|inst6  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst6 ;
+; debouncer:inst1|clock_divider_1024:inst|inst7  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst7 ;
+; debouncer:inst9|clock_divider_1024:inst|inst7  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst7 ;
+; debouncer:inst1|clock_divider_1024:inst|inst8  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst8 ;
+; debouncer:inst9|clock_divider_1024:inst|inst8  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst8 ;
+; debouncer:inst1|clock_divider_1024:inst|inst9  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst9 ;
+; debouncer:inst9|clock_divider_1024:inst|inst9  ; Merged with debouncer:inst10|clock_divider_1024:inst|inst9 ;
+; Total Number of Removed Registers = 18         ;                                                            ;
++------------------------------------------------+------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 103   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 58    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 50    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex6|6BitRegister:reg|inst5 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex2|6BitRegister:reg|inst5 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex3|6BitRegister:reg|inst5 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex4|6BitRegister:reg|inst2 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MorseCodeDecoder|RegShiftAnd7Seg:hex5|6BitRegister:reg|inst5 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex7|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex6|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex5|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex4|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex3|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex2|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex1|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegShiftAnd7Seg:hex0|BUSMUX:inst9 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 6     ; Untyped                                               ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 82                          ;
+; cycloneiii_ff         ; 103                         ;
+;     CLR               ; 10                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 48                          ;
+;     plain             ; 43                          ;
+; cycloneiii_lcell_comb ; 524                         ;
+;     normal            ; 524                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 155                         ;
+;         4 data inputs ; 343                         ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.89                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Processing started: Thu Aug 25 20:54:09 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MorseCodeDecoder -c MorseCodeDecoder
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file morsecodedecoder.bdf
+    Info (12023): Found entity 1: MorseCodeDecoder
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdecoder.v
+    Info (12023): Found entity 1: sevenSegDecoder File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dashnextstate.v
+    Info (12023): Found entity 1: dashNextState File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dotnextstate.v
+    Info (12023): Found entity 1: dotNextState File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nextstatecircuit.bdf
+    Info (12023): Found entity 1: nextStateCircuit
+Info (12021): Found 1 design units, including 1 entities, in source file charfinitestatemachine.bdf
+    Info (12023): Found entity 1: CharFiniteStateMachine
+Info (12021): Found 1 design units, including 1 entities, in source file 6bitregister.bdf
+    Info (12023): Found entity 1: 6BitRegister
+Warning (12019): Can't analyze file -- file ModifiedUpCounter.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file modifiedupcountercircuit.v
+    Info (12023): Found entity 1: ModifiedUpCounterCircuit File: U:/Documents/CPRE281/final_project/ModifiedUpCounterCircuit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modifiedupcounter.bdf
+    Info (12023): Found entity 1: ModifiedUpCounter
+Info (12021): Found 1 design units, including 1 entities, in source file decoder3to8.v
+    Info (12023): Found entity 1: Decoder3to8 File: U:/Documents/CPRE281/final_project/Decoder3to8.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regshiftand7seg.bdf
+    Info (12023): Found entity 1: RegShiftAnd7Seg
+Info (12021): Found 1 design units, including 1 entities, in source file mymux41.v
+    Info (12023): Found entity 1: myMux41 File: U:/Documents/CPRE281/final_project/myMux41.v Line: 1
+Warning (12019): Can't analyze file -- file testing.bdf is missing
+Warning (12019): Can't analyze file -- file SixUpCounter.v is missing
+Warning (12019): Can't analyze file -- file SixUpCounterFSM.bdf is missing
+Warning (12019): Can't analyze file -- file testingStates.bdf is missing
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.bdf
+    Info (12023): Found entity 1: debouncer
+Info (12127): Elaborating entity "MorseCodeDecoder" for the top level hierarchy
+Info (12128): Elaborating entity "CharFiniteStateMachine" for hierarchy "CharFiniteStateMachine:inst6"
+Info (12128): Elaborating entity "nextStateCircuit" for hierarchy "CharFiniteStateMachine:inst6|nextStateCircuit:inst"
+Info (12128): Elaborating entity "myMux41" for hierarchy "CharFiniteStateMachine:inst6|nextStateCircuit:inst|myMux41:state5"
+Info (12128): Elaborating entity "dashNextState" for hierarchy "CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2"
+Warning (10270): Verilog HDL Case Statement warning at dashNextState.v(9): incomplete case statement has no default case item File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at dashNextState.v(7): inferring latch(es) for variable "H", which holds its previous value in one or more paths through the always construct File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[0]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[1]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[2]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[3]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[4]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (10041): Inferred latch for "H[5]" at dashNextState.v(7) File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+Info (12128): Elaborating entity "dotNextState" for hierarchy "CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3"
+Warning (10270): Verilog HDL Case Statement warning at dotNextState.v(9): incomplete case statement has no default case item File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at dotNextState.v(7): inferring latch(es) for variable "H", which holds its previous value in one or more paths through the always construct File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[0]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[1]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[2]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[3]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[4]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (10041): Inferred latch for "H[5]" at dotNextState.v(7) File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:inst1"
+Warning (12125): Using design file clock_divider_1024.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: clock_divider_1024
+Info (12128): Elaborating entity "clock_divider_1024" for hierarchy "debouncer:inst1|clock_divider_1024:inst1"
+Info (12128): Elaborating entity "Decoder3to8" for hierarchy "Decoder3to8:inst4"
+Info (12128): Elaborating entity "ModifiedUpCounter" for hierarchy "ModifiedUpCounter:inst5"
+Info (12128): Elaborating entity "ModifiedUpCounterCircuit" for hierarchy "ModifiedUpCounter:inst5|ModifiedUpCounterCircuit:inst3"
+Info (12128): Elaborating entity "RegShiftAnd7Seg" for hierarchy "RegShiftAnd7Seg:hex7"
+Info (12128): Elaborating entity "6BitRegister" for hierarchy "RegShiftAnd7Seg:hex7|6BitRegister:reg"
+Info (12128): Elaborating entity "21mux" for hierarchy "RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst11"
+Info (12130): Elaborated megafunction instantiation "RegShiftAnd7Seg:hex7|6BitRegister:reg|21mux:inst11"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "RegShiftAnd7Seg:hex7|BUSMUX:inst9"
+Info (12130): Elaborated megafunction instantiation "RegShiftAnd7Seg:hex7|BUSMUX:inst9"
+Info (12133): Instantiated megafunction "RegShiftAnd7Seg:hex7|BUSMUX:inst9" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "6"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "RegShiftAnd7Seg:hex7|BUSMUX:inst9|lpm_mux:$00000" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12131): Elaborated megafunction instantiation "RegShiftAnd7Seg:hex7|BUSMUX:inst9|lpm_mux:$00000", which is child of megafunction instantiation "RegShiftAnd7Seg:hex7|BUSMUX:inst9" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_crc.tdf
+    Info (12023): Found entity 1: mux_crc File: U:/Documents/CPRE281/final_project/db/mux_crc.tdf Line: 23
+Info (12128): Elaborating entity "mux_crc" for hierarchy "RegShiftAnd7Seg:hex7|BUSMUX:inst9|lpm_mux:$00000|mux_crc:auto_generated" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "sevenSegDecoder" for hierarchy "RegShiftAnd7Seg:hex7|sevenSegDecoder:hex"
+Warning (10270): Verilog HDL Case Statement warning at sevenSegDecoder.v(11): incomplete case statement has no default case item File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at sevenSegDecoder.v(9): inferring latch(es) for variable "H", which holds its previous value in one or more paths through the always construct File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[0]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[1]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[2]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[3]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[4]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[5]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Info (10041): Inferred latch for "H[6]" at sevenSegDecoder.v(9) File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex0|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex0|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex1|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex1|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex2|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex2|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex3|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex3|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex4|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex4|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex5|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex5|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex6|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex6|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[6] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst3
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1
+Warning (13012): Latch RegShiftAnd7Seg:hex7|sevenSegDecoder:hex|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/sevenSegDecoder.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegShiftAnd7Seg:hex7|6BitRegister:reg|inst1
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[4] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[3] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d0
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[2] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[1] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[5] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dashNextState:inst2|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/dashNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Warning (13012): Latch CharFiniteStateMachine:inst6|nextStateCircuit:inst|dotNextState:inst3|H[0] has unsafe behavior File: U:/Documents/CPRE281/final_project/dotNextState.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CharFiniteStateMachine:inst6|d5
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 613 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 531 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 149 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Thu Aug 25 20:54:23 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:17
+
+

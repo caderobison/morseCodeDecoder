@@ -1,0 +1,641 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst9|inst2'
+Slack : -6.320
+TNS   : -271.686
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst1|inst2'
+Slack : -4.851
+TNS   : -25.991
+
+Type  : Slow 1200mV 85C Model Setup 'CharFiniteStateMachine:inst6|d0'
+Slack : -3.017
+TNS   : -34.267
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : -2.992
+TNS   : -19.143
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : -2.939
+TNS   : -19.110
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : -2.936
+TNS   : -20.075
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : -2.853
+TNS   : -19.121
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : -2.715
+TNS   : -17.419
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : -2.691
+TNS   : -17.944
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : -2.667
+TNS   : -17.445
+
+Type  : Slow 1200mV 85C Model Setup 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : -2.626
+TNS   : -17.440
+
+Type  : Slow 1200mV 85C Model Setup '50Clock'
+Slack : -2.477
+TNS   : -11.454
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -2.434
+TNS   : -7.648
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -2.378
+TNS   : -6.835
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -2.272
+TNS   : -6.515
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst10|inst2'
+Slack : -0.653
+TNS   : -1.817
+
+Type  : Slow 1200mV 85C Model Hold '50Clock'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst10|inst2'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst9|inst2'
+Slack : 0.574
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst1|inst2'
+Slack : 0.851
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 0.958
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 0.965
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 1.029
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 1.109
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 1.148
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 1.250
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CharFiniteStateMachine:inst6|d0'
+Slack : 1.270
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 1.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 1.424
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'debouncer:inst1|inst2'
+Slack : -0.455
+TNS   : -2.458
+
+Type  : Slow 1200mV 85C Model Removal 'debouncer:inst1|inst2'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width '50Clock'
+Slack : -3.000
+TNS   : -18.420
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst9|inst2'
+Slack : -1.285
+TNS   : -61.680
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|inst2'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst10|inst2'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 0.414
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 0.415
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CharFiniteStateMachine:inst6|d0'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 0.474
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst9|inst2'
+Slack : -5.702
+TNS   : -243.744
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst1|inst2'
+Slack : -4.282
+TNS   : -22.554
+
+Type  : Slow 1200mV 0C Model Setup 'CharFiniteStateMachine:inst6|d0'
+Slack : -2.922
+TNS   : -31.797
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : -2.900
+TNS   : -18.346
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : -2.838
+TNS   : -18.315
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : -2.816
+TNS   : -19.018
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : -2.684
+TNS   : -18.077
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : -2.576
+TNS   : -16.582
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : -2.569
+TNS   : -17.082
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : -2.550
+TNS   : -16.837
+
+Type  : Slow 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : -2.535
+TNS   : -16.722
+
+Type  : Slow 1200mV 0C Model Setup '50Clock'
+Slack : -2.184
+TNS   : -9.308
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -2.125
+TNS   : -5.999
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -2.088
+TNS   : -5.384
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -1.997
+TNS   : -5.053
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst10|inst2'
+Slack : -0.486
+TNS   : -1.198
+
+Type  : Slow 1200mV 0C Model Hold '50Clock'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst10|inst2'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst9|inst2'
+Slack : 0.531
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst1|inst2'
+Slack : 0.781
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 1.002
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 1.003
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 1.065
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 1.121
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 1.199
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CharFiniteStateMachine:inst6|d0'
+Slack : 1.249
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 1.258
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 1.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 1.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'debouncer:inst1|inst2'
+Slack : -0.345
+TNS   : -1.838
+
+Type  : Slow 1200mV 0C Model Removal 'debouncer:inst1|inst2'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width '50Clock'
+Slack : -3.000
+TNS   : -18.420
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|inst2'
+Slack : -1.285
+TNS   : -61.680
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst2'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|inst2'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst1|inst10'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CharFiniteStateMachine:inst6|d0'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst9|inst2'
+Slack : -2.878
+TNS   : -119.642
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst1|inst2'
+Slack : -2.114
+TNS   : -11.061
+
+Type  : Fast 1200mV 0C Model Setup 'CharFiniteStateMachine:inst6|d0'
+Slack : -1.406
+TNS   : -14.297
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : -1.357
+TNS   : -8.855
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : -1.294
+TNS   : -8.209
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : -1.237
+TNS   : -7.691
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : -1.216
+TNS   : -7.327
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : -1.176
+TNS   : -7.416
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : -1.066
+TNS   : -7.098
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : -1.050
+TNS   : -6.730
+
+Type  : Fast 1200mV 0C Model Setup 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : -1.037
+TNS   : -6.860
+
+Type  : Fast 1200mV 0C Model Setup '50Clock'
+Slack : -0.727
+TNS   : -1.323
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -0.712
+TNS   : -0.712
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -0.706
+TNS   : -0.768
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -0.606
+TNS   : -0.606
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst10|inst2'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold '50Clock'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst10|inst2'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 0.257
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst9|inst2'
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst1|inst2'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CharFiniteStateMachine:inst6|d0'
+Slack : 0.429
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 0.474
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'debouncer:inst1|inst2'
+Slack : 0.014
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'debouncer:inst1|inst2'
+Slack : 0.237
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width '50Clock'
+Slack : -3.000
+TNS   : -15.744
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|inst2'
+Slack : -1.000
+TNS   : -48.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst|inst10'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst|inst10'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst|inst10'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst2'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|inst2'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst10|clock_divider_1024:inst1|inst10'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|clock_divider_1024:inst1|inst10'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|clock_divider_1024:inst1|inst10'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex1|6BitRegister:reg|inst'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex7|6BitRegister:reg|inst'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex2|6BitRegister:reg|inst'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex6|6BitRegister:reg|inst'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex4|6BitRegister:reg|inst'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex5|6BitRegister:reg|inst'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex3|6BitRegister:reg|inst'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CharFiniteStateMachine:inst6|d0'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegShiftAnd7Seg:hex0|6BitRegister:reg|inst'
+Slack : 0.402
+TNS   : 0.000
+
+------------------------------------------------------------
